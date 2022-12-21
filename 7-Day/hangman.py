@@ -90,12 +90,14 @@ while True:
                 if choice not in word_list:
                     count += 1
                 word_list[pos] = choice
+        print("\033c\033[3J", end='')
         print_list(word_list)
         print()
         print('\r' + gallow)
     else:
         life += 1
         gallow = hangman_gallows[life]
+        print("\033c\033[3J", end='')
         print_list(word_list)
         print(f"You guessed {choice}, that's not in the word. You lose a life.")
         print('\r' + gallow)
